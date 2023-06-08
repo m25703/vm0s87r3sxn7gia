@@ -10,6 +10,7 @@ import { faMicrophone, faStop, faPlay } from '@fortawesome/free-solid-svg-icons'
 const WordHighlighterWithSpeech = ({ words }) => {
   const [highlightedWord, setHighlightedWord] = useState(0);
   const [isHighlighting, setIsHighlighting] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const [value, setValue] = useState('');
   const [spokenWords, setSpokenWords] = useState('');
   const { listen, listening, stop } = useSpeechRecognition({
@@ -33,6 +34,7 @@ const WordHighlighterWithSpeech = ({ words }) => {
   }, [isHighlighting, words]);
 
   const startHighlighting = () => {
+    setIsDisabled(true);
     setIsHighlighting(true);
     speakWordsInOrder();
   };
@@ -171,10 +173,9 @@ const Button = styled.button`
 // `;
 
   return (
-
     <div style={{marginTop: "5%"}}>
       <center>
-      <Button onClick={startHighlighting}><FontAwesomeIcon icon={faPlay} /> <br></br> Listen </Button>
+      <Button disabled={isDisabled} onClick={startHighlighting}><FontAwesomeIcon icon={faPlay} /> <br></br> Listen </Button>
       <Button onClick={handleToggleListening}>
         {listening ? ( <>
           <FontAwesomeIcon icon={faStop} /> <br></br> Speak </>
