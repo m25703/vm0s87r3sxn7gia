@@ -172,7 +172,7 @@ const Button = styled.button`
 
   return (
 
-    <div>
+    <div style={{marginTop: "5%"}}>
       <center>
       <Button onClick={startHighlighting}><FontAwesomeIcon icon={faPlay} /> <br></br> Listen </Button>
       <Button onClick={handleToggleListening}>
