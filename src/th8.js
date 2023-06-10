@@ -39,12 +39,6 @@ const WordHighlighterWithSpeech = ({ words }) => {
     speakWordsInOrder();
   };
 
-  // const stopHighlighting = () => {
-  //   setIsHighlighting(false);
-  //   setHighlightedWord(0);
-  //   stopSpeech();
-  // };
-
   function speechComparison(ogstring, checkingstring){
     let ogcpy = [...ogstring];
     const regex = /[!"#$%&()*+,-./:;<=>?@[\]^_`{|}~]/g;
@@ -99,32 +93,6 @@ const WordHighlighterWithSpeech = ({ words }) => {
     }
   };
 
-  // const stopSpeech = () => {
-  //   if ('speechSynthesis' in window) {
-  //     speechSynthesis.cancel();
-  //   }
-  // };
-
- 
-
-// const Button = styled.button`
-//   display: inline-block;
-//   outline: 0;
-//   border:0;
-//   margin: 5%;
-//   cursor: pointer;
-//   text-decoration: none;
-//   position: relative;
-//   color: #000;
-//   background: #fff;
-//   line-height: 30px;
-//   border-radius: 40px;
-//   padding: 20px;
-//   font-size: 30px;
-//   font-weight: 600;
-
-// `;
-
 const Button = styled.button`
   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
   border-radius: 8px;
@@ -159,19 +127,6 @@ const Button = styled.button`
 }
 `;
 
-// const Button = styled.button`
-//   color: limegreen;
-//   border: 2px solid limegreen;
-//   font-size: 1em;
-//   margin: 1em;
-//   padding: 0.25em 1em;
-//   border-radius: 3px;
-
-//   &:hover {
-//     opacity: 0.9;
-//   }
-// `;
-
   return (
     <div style={{marginTop: "5%"}}>
       <center>
@@ -187,7 +142,7 @@ const Button = styled.button`
         {words.map((word, index) => (
           <span
             key={index}
-            style={{ backgroundColor: speechComparison(words,spokenWords).includes(index) ? 'blue' : index === highlightedWord ? 'yellow' : 'transparent' }}
+            style={{ backgroundColor: speechComparison(words,spokenWords).includes(index) ? 'deepskyblue' : index === highlightedWord ? 'deepskyblue' : 'transparent' }}
           >
             {word}{' '}
           </span>
