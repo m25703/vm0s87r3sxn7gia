@@ -142,7 +142,7 @@ const Button = styled.button`
         {words.map((word, index) => (
           <span
             key={index}
-            style={{ backgroundColor: speechComparison(words,spokenWords).includes(index) ? 'deepskyblue' : index === highlightedWord ? 'deepskyblue' : 'transparent' }}
+            style={{ backgroundColor: speechComparison(words,spokenWords).includes(index) ? 'deepskyblue' : index === highlightedWord ? 'yellow' : 'transparent' }}
           >
             {word}{' '}
           </span>
